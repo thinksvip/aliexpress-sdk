@@ -1,0 +1,24 @@
+{
+  "name": "thinksvip/aliexpress-sdk",
+  "description": "API Framework for https://developers.aliexpress.com/doc.htm?docId=108334&docType=1 (速卖通SDK非官方)",
+  "minimum-stability": "stable",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "thinksvip",
+      "email": "thinksvip@outlook.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "ext-json": "*",
+    "ext-simplexml": "*",
+    "ext-curl": "*",
+    "ext-mbstring": "*",
+    "netresearch/jsonmapper": "*"
+  },
+  "autoload": {
+    "psr-4": {"Aliexpress\\": "src//"}
+  }
+}
