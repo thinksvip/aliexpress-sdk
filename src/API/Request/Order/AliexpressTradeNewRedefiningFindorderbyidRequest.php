@@ -1,6 +1,7 @@
 <?php
 namespace Aliexpress\API\Request\Order;
 use Aliexpress\Object\Order\AeopTpOrderDetailDto;
+use Exception;
 use JsonMapper;
 
 /**
@@ -49,8 +50,15 @@ class AliexpressTradeNewRedefiningFindorderbyidRequest
 		$this->$key = $value;
 	}
 
+
+    /**
+     * @param $resp
+     * @return AeopTpOrderDetailDto
+     * @throws \JsonMapper_Exception
+     */
 	public function response($resp) : AeopTpOrderDetailDto
     {
-        return (new JsonMapper())->map($resp->target,new AeopTpOrderDetailDto());
+        if (isset($resp->target)) return (new JsonMapper())->map($resp->target,new AeopTpOrderDetailDto());
+        throw new Exception($resp->sub_msg);
     }
 }
